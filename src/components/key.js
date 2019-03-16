@@ -10,10 +10,10 @@ class Key extends React.Component {
     
     render() {
         return (
-            <div key={this.props.label} className="key" onClick={this.props.handleClick}>
+            <button key={this.props.label} className="key" onClick={this.props.handleClick}>
                 <div className="digits">{this.props.label}</div>
                 <div>{this.getLettersForKey(this.props.label)}</div>
-            </div>
+            </button>
         );
     }
 }

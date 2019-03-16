@@ -1,6 +1,7 @@
 import React from 'react';
 import {debounce} from 'throttle-debounce';
 import Key from './key';
+import InputField from './InputField';
 import { KeyMap } from '../constants/AppConstants'
 
 class Keypad extends React.Component {
@@ -63,13 +64,33 @@ class Keypad extends React.Component {
         return letter;
     }
 
+    clearData = () => {
+        this.setState({
+            result: "",
+            currentKey: "",
+            currentKeyCount: 0,
+            currentLetter: ""
+        });
+    }
+
+    removeLastLetter = () => {
+        let newResult = this.state.result.slice(0, -1);
+        this.setState({
+            result: newResult
+        });
+    }
+
     render() {
         return(
             <div className="keypad-container">
-                <div className="input-field">
-                    {this.state.result}
-                    {this.state.currentLetter}
-                    <span className="blinker">|</span>
+                <InputField
+                    result={this.state.result}
+                    currentLetter={this.state.currentLetter}
+                />
+                <div className="actions">
+                    <button className="clear-button" onClick={this.clearData}>Clear</button>
+                    <button className="remove-button" onClick={this.removeLastLetter}>Remove</button>
+                    <div className="clear"></div>
                 </div>
                 <div className="key-container" >
                     <Key label="1" handleClick={this.handleClick.bind(this, '1')} />
@@ -85,7 +106,7 @@ class Keypad extends React.Component {
                     <Key label="0" handleClick={this.handleClick.bind(this, '0')} />
                     <Key label="#" handleClick={this.handleClick.bind(this, '#')} />
                 </div>
-                <div className="clear"></div>              
+                <div className="clear"></div>
             </div>
         );
     }
