@@ -63,11 +63,6 @@ class Keypad extends React.Component {
         return letter;
     }
 
-    getLettersForKey = (key) => {
-        let letters = KeyMap[key].slice(0, -1).join(' ');
-        return letters;
-    }
-
     render() {
         return(
             <div className="keypad-container">
@@ -77,18 +72,18 @@ class Keypad extends React.Component {
                     <span className="blinker">|</span>
                 </div>
                 <div className="key-container" >
-                    <Key key="1" label="1" letters={this.getLettersForKey('1')} handleClick={this.handleClick.bind(this, '1')} />
-                    <Key key="2" label="2" letters={this.getLettersForKey('2')} handleClick={this.handleClick.bind(this, '2')} />
-                    <Key key="3" label="3" letters={this.getLettersForKey('3')} handleClick={this.handleClick.bind(this, '3')} />
-                    <Key key="4" label="4" letters={this.getLettersForKey('4')} handleClick={this.handleClick.bind(this, '4')} />
-                    <Key key="5" label="5" letters={this.getLettersForKey('5')} handleClick={this.handleClick.bind(this, '5')} />
-                    <Key key="6" label="6" letters={this.getLettersForKey('6')} handleClick={this.handleClick.bind(this, '6')} />
-                    <Key key="7" label="7" letters={this.getLettersForKey('7')} handleClick={this.handleClick.bind(this, '7')} />
-                    <Key key="8" label="8" letters={this.getLettersForKey('8')} handleClick={this.handleClick.bind(this, '8')} />
-                    <Key key="9" label="9" letters={this.getLettersForKey('9')} handleClick={this.handleClick.bind(this, '9')} />
-                    <Key key="*" label="*" handleClick={this.handleClick.bind(this, '*')} />
-                    <Key key="0" label="0" letters={this.getLettersForKey('0')} handleClick={this.handleClick.bind(this, '0')} />
-                    <Key key="#" label="#" handleClick={this.handleClick.bind(this, '#')} />
+                    <Key label="1" handleClick={this.handleClick.bind(this, '1')} />
+                    <Key label="2" handleClick={this.handleClick.bind(this, '2')} />
+                    <Key label="3" handleClick={this.handleClick.bind(this, '3')} />
+                    <Key label="4" handleClick={this.handleClick.bind(this, '4')} />
+                    <Key label="5" handleClick={this.handleClick.bind(this, '5')} />
+                    <Key label="6" handleClick={this.handleClick.bind(this, '6')} />
+                    <Key label="7" handleClick={this.handleClick.bind(this, '7')} />
+                    <Key label="8" handleClick={this.handleClick.bind(this, '8')} />
+                    <Key label="9" handleClick={this.handleClick.bind(this, '9')} />
+                    <Key label="*" handleClick={this.handleClick.bind(this, '*')} />
+                    <Key label="0" handleClick={this.handleClick.bind(this, '0')} />
+                    <Key label="#" handleClick={this.handleClick.bind(this, '#')} />
                 </div>
                 <div className="clear"></div>              
             </div>
