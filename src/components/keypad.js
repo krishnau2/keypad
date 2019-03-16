@@ -19,7 +19,6 @@ class Keypad extends React.Component {
     }
     
     handleClick = (key) => {
-        console.log("Key: ", key);
         let currentKeyCount, currentLetter = '';
         if(key === this.state.currentKey){
             currentKeyCount = this.state.currentKeyCount + 1;
