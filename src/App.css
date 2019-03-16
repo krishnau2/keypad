@@ -5,12 +5,6 @@
   margin-right: auto;
 }
 
-#result{
-  width: 225px;
-  height: 25px;
-  margin-left:2px;
-}
-
 .keypad-container {
   width: 250px;
   border: 1px solid #ddd;
@@ -29,6 +23,18 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding: 0 5px;
+  overflow: scroll;
+}
+.blinker {
+  font-size: 20px;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
 }
 .key-container {
   width: 230px;
@@ -45,7 +51,7 @@
   border-radius: 10px;
   background-color: #27AE60;
   color: #fff;
-
+  cursor: pointer;
 }
 .key:hover {
   background-color: #6bc792;
