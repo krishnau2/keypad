@@ -2,6 +2,7 @@ import React from 'react';
 import {debounce} from 'throttle-debounce';
 import Key from './key';
 import InputField from './InputField';
+import ActionButtons from './ActionButtons';
 import { KeyMap } from '../constants/AppConstants'
 
 class Keypad extends React.Component {
@@ -87,11 +88,10 @@ class Keypad extends React.Component {
                     result={this.state.result}
                     currentLetter={this.state.currentLetter}
                 />
-                <div className="actions">
-                    <button className="clear-button" onClick={this.clearData}>Clear</button>
-                    <button className="remove-button" onClick={this.removeLastLetter}>Remove</button>
-                    <div className="clear"></div>
-                </div>
+                <ActionButtons
+                    clearData={this.clearData}
+                    removeLastLetter={this.removeLastLetter}
+                />
                 <div className="key-container" >
                     <Key label="1" handleClick={this.handleClick.bind(this, '1')} />
                     <Key label="2" handleClick={this.handleClick.bind(this, '2')} />
