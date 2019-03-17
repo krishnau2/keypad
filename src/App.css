@@ -27,6 +27,7 @@
   text-align: left;
   padding: 3px 5px 0 5px;
   overflow: scroll;
+  white-space: pre;
 }
 .blinker {
   font-size: 20px;
