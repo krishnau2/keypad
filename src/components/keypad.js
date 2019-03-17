@@ -60,7 +60,7 @@ class Keypad extends React.Component {
         }
 
         letter = mappedLetters[index];
-        letter = letter === '_' ? ' ' : letter;
+        letter = letter === '____' ? ' ' : letter;
         return letter;
     }
 

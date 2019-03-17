@@ -52,8 +52,17 @@
 .clear-button {
   float: left;
 }
+
+.clear-button:focus {
+  outline: none;
+}
+
 .remove-button {
   float: right;
+}
+
+.remove-button:focus {
+  outline: none;
 }
 
 .key-container {
@@ -75,6 +84,9 @@
 }
 .key:hover {
   background-color: #6bc792;
+}
+.key:focus {
+  outline: none;
 }
 .digits {
   font-weight: bold;
